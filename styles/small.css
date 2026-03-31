@@ -1,0 +1,121 @@
+/* --- Root Variables: RheignCred Color Scheme --- */
+:root {
+    --navy: #0b2c5a;
+    --teal: #17a2b8;
+    --coral: #ff6b35;
+    --light-bg: #f4f7f6;
+    --white: #ffffff;
+}
+
+/* --- Global Reset & Typography --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-bg);
+    color: #333;
+    line-height: 1.6;
+    padding: 10px;
+}
+
+/* --- Layout Elements --- */
+header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+section {
+    background: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: var(--navy);
+    border-bottom: 3px solid var(--teal);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h3 {
+    color: var(--teal);
+    margin-bottom: 10px;
+}
+
+/* --- Mobile Specific Styles (Single Column) --- */
+.color-container, 
+.wireframe-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.navy { background-color: var(--navy); }
+.teal { background-color: var(--teal); }
+.coral { background-color: var(--coral); }
+
+.preview {
+    font-size: 1.1rem;
+    padding: 15px;
+    background: #eee;
+    border-left: 5px solid var(--navy);
+    margin-top: 10px;
+}
+
+.wf-placeholder {
+    background-color: #e0e0e0;
+    border: 2px dashed #999;
+    padding: 40px 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+}
+/* --- Footer Styling --- */
+footer {
+    background-color: var(--navy); /* Same as header */
+    color: var(--white);           /* White text for contrast */
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 20px;
+    border-radius: 8px;            /* Matches header/section rounding */
+    font-weight: 300;              /* Lighter Roboto weight for secondary info */
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+#lastModified {
+    color: var(--teal);            /* Accent the date with our medical teal */
+    font-weight: 700;
+}
