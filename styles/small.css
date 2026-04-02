@@ -1,121 +1,95 @@
-/* --- Root Variables: RheignCred Color Scheme --- */
+/* --- GLOBAL VARIABLES --- */
 :root {
     --navy: #0b2c5a;
     --teal: #17a2b8;
-    --coral: #ff6b35;
-    --light-bg: #f4f7f6;
     --white: #ffffff;
+    --light-bg: #f4f7f6;
+    --text-color: #333333;
+    --radius: 8px;
+    --shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* --- Global Reset & Typography --- */
+/* --- RESET & BASE STYLES --- */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Prevents padding from breaking width */
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--light-bg);
-    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
     line-height: 1.6;
-    padding: 10px;
+    color: var(--text-color);
+    background-color: var(--light-bg);
 }
 
-/* --- Layout Elements --- */
-header {
-    background-color: var(--navy);
-    color: var(--white);
-    padding: 30px 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    font-weight: 900;
-    letter-spacing: -1px;
-}
-
-section {
-    background: var(--white);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-h2 {
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
     color: var(--navy);
-    border-bottom: 3px solid var(--teal);
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-h3 {
-    color: var(--teal);
-    margin-bottom: 10px;
-}
-
-/* --- Mobile Specific Styles (Single Column) --- */
-.color-container, 
-.wireframe-container {
-    display: flex;
+/* --- NAVIGATION (Mobile View) --- */
+#nav-list {
+    display: none; /* Hidden by default for Hamburger Menu */
+    list-style: none;
     flex-direction: column;
-    gap: 15px;
+    background-color: var(--navy);
 }
 
-.color-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+#nav-list.show-nav {
+    display: flex; /* Shown when JS toggles the class */
 }
 
-.swatch {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid #ddd;
+/* --- DIRECTORY GRID (320px+) --- */
+#directory-grid {
+    display: grid;
+    /* auto-fit allows cards to fill the space on mobile (1 column) 
+       and automatically create more columns on tablet/desktop */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.navy { background-color: var(--navy); }
-.teal { background-color: var(--teal); }
-.coral { background-color: var(--coral); }
-
-.preview {
-    font-size: 1.1rem;
-    padding: 15px;
-    background: #eee;
-    border-left: 5px solid var(--navy);
-    margin-top: 10px;
-}
-
-.wf-placeholder {
-    background-color: #e0e0e0;
-    border: 2px dashed #999;
-    padding: 40px 10px;
+.doctor-card {
+    background-color: var(--white);
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+    padding: 1.5rem;
     text-align: center;
-    font-weight: bold;
-    color: #666;
-}
-/* --- Footer Styling --- */
-footer {
-    background-color: var(--navy); /* Same as header */
-    color: var(--white);           /* White text for contrast */
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 20px;
-    border-radius: 8px;            /* Matches header/section rounding */
-    font-weight: 300;              /* Lighter Roboto weight for secondary info */
-    font-size: 0.85rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
 }
 
-footer p {
-    margin-bottom: 5px;
+/* --- OPTIMIZED IMAGES --- */
+.doctor-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Intrinsic Aspect Ratio */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
 }
 
-#lastModified {
-    color: var(--teal);            /* Accent the date with our medical teal */
-    font-weight: 700;
+/* --- FORM & MODAL --- */
+dialog {
+    width: 90%;
+    max-width: 500px;
+    border: none;
+    border-radius: var(--radius);
+    padding: 2rem;
+}
+
+dialog::backdrop {
+    background: rgba(11, 44, 90, 0.8); /* Navy backdrop */
+}
+
+button {
+    background-color: var(--teal);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

@@ -1,26 +1,18 @@
-/* --- Desktop & Tablet Adjustments --- */
+/* --- Desktop & Tablet Adjustments (Documentation & Site Plan) --- */
 
 main {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-header {
-    padding: 60px 20px;
-}
-
-header h1 {
-    font-size: 2.8rem;
-}
-
-/* Multi-column Color Grid */
+/* Multi-column Color Grid for Site Plan */
 .color-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-/* Side-by-side Wireframes */
+/* Side-by-side Wireframes for Site Plan */
 .wireframe-container {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -29,7 +21,7 @@ header h1 {
 }
 
 .desktop-view {
-    padding: 100px 0; /* Make the desktop wireframe box taller */
+    padding: 100px 0; /* Makes the desktop wireframe box taller */
 }
 
 /* Horizontal spacing for scenarios */
@@ -41,4 +33,74 @@ header h1 {
 
 #scenarios h2 {
     grid-column: 1 / -1;
+}
+
+/* --- LIVE SITE RESPONSIVE LOGIC (768px and up) --- */
+@media (min-width: 768px) {
+    
+    /* 1. The Fix: Professional Header Padding for Desktop */
+    header {
+        padding: 40px 5%; /* Balanced padding for desktop "Substance" */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 2.5rem; /* Large, clear branding */
+    }
+
+    /* 2. Hide the Hamburger Menu Button */
+    #menu-button {
+        display: none;
+    }
+
+    /* 3. Re-molding the Navigation Bar */
+    #nav-list {
+        display: flex !important; /* Forces menu to show on desktop */
+        flex-direction: row;      /* Horizontal layout */
+        background: none;         /* Removes mobile navy background */
+        gap: 1.5rem;
+    }
+
+    #nav-list li {
+        border: none;
+    }
+
+    #nav-list a {
+        padding: 0.5rem 1rem;
+        border: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    #nav-list a:hover {
+        color: var(--teal);
+        text-decoration: underline;
+    }
+
+    /* 4. Directory Grid Refinement */
+    #directory-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 Specialists per row */
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    /* 5. Hero Section Optimization */
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+        padding: 4rem 0;
+    }
+
+    /* 6. Footer Alignment */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 2rem 5%;
+    }
 }
