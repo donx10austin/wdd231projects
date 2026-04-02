@@ -99,3 +99,12 @@ footer {
     text-align: left;
     padding: 2rem 5%;
 }
+
+@media (min-width: 768px) {
+    /* Create a grid for the contact info row */
+    .contact-info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
