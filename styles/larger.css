@@ -120,3 +120,17 @@ main {
     gap: 20px;
     text-align: center;
 }
+
+@media (min-width: 768px) {
+    /* Create a two-column feel for personal info */
+    fieldset div.grid-inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .form-section h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+}

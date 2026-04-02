@@ -36,29 +36,33 @@
 
     <main>
         <section class="form-container">
-            <h1>Appointment Request</h1>
-            <p>Please fill out the form below. A RheignCred coordinator will contact you within 24 hours.</p>
+            <div class="form-header">
+                <h1>Appointment Request</h1>
+                <p>Please fill out the form below. A RheignCred coordinator will contact you within 24 hours.</p>
+            </div>
 
             <form action="thankyou.html" method="get" id="appointment-form">
-                
                 <input type="hidden" id="timestamp" name="timestamp" value="">
 
                 <fieldset>
                     <legend>Personal Information</legend>
                     <label>First Name* <input type="text" name="fname" title="Enter your first name" required>
                     </label>
+                    
                     <label>Last Name* <input type="text" name="lname" title="Enter your last name" required>
                     </label>
+                    
                     <label>Email Address* <input type="email" name="email" placeholder="example@gmail.com" title="Please enter a valid email" required>
                     </label>
+                    
                     <label>Mobile Number* <input type="tel" name="phone" placeholder="0803 123 4567" required>
                     </label>
                 </fieldset>
 
                 <fieldset>
-                    <legend>Injury/Specialty Details</legend>
+                    <legend>Injury & Specialty Details</legend>
                     <label>Type of Injury/Concern
-                        <select name="injury-type" id="injury-type">
+                        <select name="injury-type" id="injury-type" required>
                             <option value="" disabled selected>Select a category...</option>
                             <option value="sports">Sports Injury (Knee/Ankle)</option>
                             <option value="joint">Joint Replacement (Hip/Knee)</option>
@@ -67,12 +71,13 @@
                             <option value="other">General Consultation</option>
                         </select>
                     </label>
+                    
                     <label>Additional Notes
-                        <textarea name="description" rows="4" placeholder="Briefly describe your symptoms..."></textarea>
+                        <textarea name="description" rows="5" placeholder="Briefly describe your symptoms or medical history..."></textarea>
                     </label>
                 </fieldset>
 
-                <input type="submit" value="Request Appointment" class="submit-btn">
+                <button type="submit" class="submit-btn">Request Appointment</button>
             </form>
         </section>
     </main>
