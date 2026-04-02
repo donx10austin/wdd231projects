@@ -1,30 +1,86 @@
-/* --- Desktop & Tablet Adjustments (Documentation & Site Plan) --- */
-
+/* --- 1. GLOBAL LAYOUT --- */
 main {
-    max-width: 1000px;
+    max-width: 1200px; /* Slightly wider for modern screens */
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Multi-column Color Grid for Site Plan */
+/* --- 2. THE RESPONSIVE HEADER --- */
+header {
+    padding: 20px 5%; 
+    display: flex;
+    flex-direction: row; /* Switch from mobile column to desktop row */
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+}
+
+#menu-button {
+    display: none; /* Hide hamburger on desktop */
+}
+
+/* --- 3. THE NAVIGATION RE-MOLD --- */
+#nav-list {
+    display: flex !important; /* Ensure visibility */
+    flex-direction: row;      /* Horizontal layout */
+    background: none;         /* Remove mobile navy background */
+    gap: 1.5rem;
+    margin-top: 0;            /* Remove mobile top margin */
+}
+
+#nav-list a {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#nav-list a:hover {
+    color: var(--teal);
+    text-decoration: underline;
+}
+
+/* --- 4. PAGE-SPECIFIC GRIDS --- */
+
+/* Hero Section (Home Page) */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 0;
+}
+
+/* Directory (Specialists Page) */
+#directory-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 Specialists per row */
+    gap: 30px;
+}
+
+/* Form Grid (Book Now Page) */
+.grid-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* --- 5. DOCUMENTATION STYLES (Site Plan) --- */
 .color-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    text-align: center;
 }
 
-/* Side-by-side Wireframes for Site Plan */
 .wireframe-container {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px 1fr; /* Fixed mobile next to flexible desktop */
     gap: 40px;
     align-items: start;
 }
 
-.desktop-view {
-    padding: 100px 0; /* Makes the desktop wireframe box taller */
-}
-
-/* Horizontal spacing for scenarios */
 #scenarios {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -32,105 +88,14 @@ main {
 }
 
 #scenarios h2 {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Header spans both columns */
 }
 
-/* --- LIVE SITE RESPONSIVE LOGIC (768px and up) --- */
-@media (min-width: 768px) {
-    
-    /* 1. The Fix: Professional Header Padding for Desktop */
-    header {
-        padding: 40px 5%; /* Balanced padding for desktop "Substance" */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    header h1 {
-        font-size: 2.5rem; /* Large, clear branding */
-    }
-
-    /* 2. Hide the Hamburger Menu Button */
-    #menu-button {
-        display: none;
-    }
-
-    /* 3. Re-molding the Navigation Bar */
-    #nav-list {
-        display: flex !important; /* Forces menu to show on desktop */
-        flex-direction: row;      /* Horizontal layout */
-        background: none;         /* Removes mobile navy background */
-        gap: 1.5rem;
-    }
-
-    #nav-list li {
-        border: none;
-    }
-
-    #nav-list a {
-        padding: 0.5rem 1rem;
-        border: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-    }
-
-    #nav-list a:hover {
-        color: var(--teal);
-        text-decoration: underline;
-    }
-
-    /* 4. Directory Grid Refinement */
-    #directory-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 Specialists per row */
-        gap: 30px;
-        padding: 40px 0;
-    }
-
-    /* 5. Hero Section Optimization */
-    .hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 3rem;
-        padding: 4rem 0;
-    }
-
-    /* 6. Footer Alignment */
-    footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-        padding: 2rem 5%;
-    }
-}
-
-/* This is what creates the side-by-side look you see in your screenshot */
-.wireframe-container {
-    display: grid;
-    grid-template-columns: 320px 1fr; /* Fixed mobile width next to flexible desktop */
-    gap: 40px;
-    align-items: start;
-    margin-top: 20px;
-}
-
-.color-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    text-align: center;
-}
-
-@media (min-width: 768px) {
-    /* Create a two-column feel for personal info */
-    fieldset div.grid-inputs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-    
-    .form-section h1 {
-        text-align: center;
-        font-size: 2.5rem;
-    }
+/* --- 6. GLOBAL FOOTER --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 2rem 5%;
 }

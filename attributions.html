@@ -5,28 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resource Attributions | RheignCred Orthopedic Hospital</title>
     
+    <link rel="stylesheet" href="styles/normalize.css">
+    
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 768px)">
 </head>
 <body class="attributions-page">
     <header>
         <div class="logo-area">
+            <img src="images/rheigncred-logo.webp" alt="RheignCred Logo" width="50" height="50">
             <h1>RheignCred</h1>
         </div>
         <nav>
-            <ul id="nav-list" style="display: flex; list-style: none; gap: 1rem;">
+            <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Specialists</a></li>
                 <li><a href="join.html">Book Now</a></li>
+                <li><a href="site-plan.html">Site Plan</a></li>
             </ul>
         </nav>
     </header>
 
-    <main style="padding: 2rem; max-width: 800px; margin: 0 auto;">
+    <main class="attributions-container">
         <h1>Resource Attributions</h1>
         <p>The following external resources were utilized to build the RheignCred Orthopedic Hospital digital experience.</p>
 
-        <section style="margin-top: 2rem;">
+        <section class="attribution-section">
             <h2>Images & Media</h2>
             <ul>
                 <li><strong>Specialist Portraits:</strong> All doctor images were sourced from <a href="https://unsplash.com" target="_blank">Unsplash</a> and optimized to WebP format for performance.</li>
@@ -35,7 +39,7 @@
             </ul>
         </section>
 
-        <section style="margin-top: 2rem;">
+        <section class="attribution-section">
             <h2>Typography & Icons</h2>
             <ul>
                 <li><strong>Fonts:</strong> 'Montserrat' (Headings) and 'Open Sans' (Body) provided by <a href="https://fonts.google.com" target="_blank">Google Fonts</a>.</li>
@@ -43,7 +47,7 @@
             </ul>
         </section>
 
-        <section style="margin-top: 2rem;">
+        <section class="attribution-section">
             <h2>Code & Technical Logic</h2>
             <ul>
                 <li><strong>Form Validation:</strong> Hidden timestamp and email validation patterns inspired by <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a>.</li>
@@ -52,13 +56,22 @@
             </ul>
         </section>
 
-        <div style="margin-top: 3rem; border-top: 1px solid #ddd; padding-top: 1rem;">
-            <p><a href="index.html" class="cta-button" style="text-decoration: none; background: var(--navy); color: white; padding: 10px 20px; border-radius: 4px;">Return to Home Page</a></p>
+        <div class="return-home">
+            <a href="index.html" class="cta-button">Return to Home Page</a>
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 2rem; background: var(--navy); color: white; margin-top: 4rem;">
-        <p>&copy; 2026 RheignCred Orthopedic Hospital | Project Credits</p>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 RheignCred Orthopedic Hospital | Lagos, Nigeria</p>
+            <nav class="footer-nav">
+                <a href="site-plan.html">Site Plan</a> | 
+                <a href="attributions.html">Attributions</a>
+            </nav>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
     </footer>
+
+    <script src="scripts/main.js" type="module"></script>
 </body>
 </html>
