@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
     
     <link rel="stylesheet" href="styles/normalize.css">
-    
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 768px)">
 </head>
@@ -29,8 +28,8 @@
         <nav>
             <ul id="nav-list">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="directory.html">Specialists</a></li>
-                <li><a href="join.html">Book Now</a></li>
+                <li><a href="specialists.html">Specialists</a></li>
+                <li><a href="#booking">Book Now</a></li>
                 <li><a href="site-plan.html">Site Plan</a></li>
             </ul>
         </nav>
@@ -41,7 +40,7 @@
             <div class="hero-text">
                 <h2>Precision in Motion. <br>Excellence in Recovery.</h2>
                 <p>Lagos's premier destination for advanced orthopedic surgery and sports medicine.</p>
-                <a href="join.html" class="cta-button">Book a Consultation</a>
+                <a href="#booking" class="cta-button">Book a Consultation</a>
             </div>
             <div class="hero-image">
                 <img src="images/hero-hospital.webp" alt="Modern Medical Facility" width="600" height="400">
@@ -69,9 +68,36 @@
         <section class="find-doctor">
             <div class="cta-content">
                 <h2>Looking for a Specialist?</h2>
-                <p>Browse our directory of 15 board-certified surgeons practicing across Lagos.</p>
-                <a href="directory.html" class="secondary-btn">View Specialist Directory</a>
+                <p>Browse our directory of board-certified surgeons practicing across Lagos.</p>
+                <a href="specialists.html" class="secondary-btn">View Specialist Directory</a>
             </div>
+        </section>
+
+        <section id="booking" class="form-section">
+            <h2>Book an Appointment</h2>
+            <form action="thanks.html" method="get">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label>Full Name: <input type="text" name="fname" required></label>
+                    <label>Email: <input type="email" name="email" placeholder="example@mail.com" required></label>
+                    <label>Phone: <input type="tel" name="phone" required></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Appointment Details</legend>
+                    <label>Select Specialist:
+                        <select name="doctor">
+                            <option value="">Choose a Doctor...</option>
+                            <option value="adebayo">Dr. Segun Adebayo</option>
+                            <option value="okoro">Dr. Chidi Okoro</option>
+                            <option value="bakare">Dr. Funmi Bakare</option>
+                        </select>
+                    </label>
+                    <label>Reason for Visit: 
+                        <textarea name="notes" rows="4"></textarea>
+                    </label>
+                </fieldset>
+                <input type="submit" value="Confirm Appointment" class="submit-btn">
+            </form>
         </section>
     </main>
 
@@ -80,7 +106,7 @@
             <p>&copy; 2026 RheignCred Orthopedic Hospital | Lagos, Nigeria</p>
             <nav class="footer-nav">
                 <a href="site-plan.html">Site Plan</a> | 
-                <a href="attributions.html">Attributions</a>
+                <a href="site-plan.html#attributions">Attributions</a>
             </nav>
             <p>Last Modified: <span id="lastModified"></span></p>
         </div>
